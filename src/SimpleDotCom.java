@@ -15,7 +15,7 @@ public class SimpleDotCom {
             }
         }
         if (numOfHits == locationCells.length) {
-            result = "Sunk";
+            result = "Sank";
         }
         System.out.println(result);
         return result;

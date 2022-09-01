@@ -8,14 +8,13 @@ public class SimpleDotComGame {
         theDotCom.setLocationCells(locations);
         boolean isAlive = true;
 
-        while (isAlive == true) {
+        while(isAlive == true) {
             String guess = helper.getUserInput("Enter the number");
             String result = theDotCom.checkYourself(guess);
             numOfGuesses++;
-
         if (result.equals("Sank")) {
             isAlive = false;
-            System.out.println("It took you" + numOfGuesses + "attempts(s)");
+            System.out.println("It took you" + " " +  numOfGuesses + " " + "attempts(s)");
         }
         }
     }
