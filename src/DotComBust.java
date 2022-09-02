@@ -45,6 +45,37 @@ public class DotComBust {
     private void checkUserGuess (String userGuess) {
           //Инкрементируем количество попыток, которые сделал пользователь
         numOfGuesses++;
-        
+          // Подразумеваем промах, пока не выяснили обратного
+        String result = "Past";
+          //Повторяем это для всех объектов DotCom в списке.
+        for (DotCom dotComToTest : dotComsList) {
+             //Просим DotCom проверить ход пользователя, ищем попадание(или потопление)
+            result = dotComToTest.checkYourself(userGuess);
+            if (result.equals("Hit")) {
+                  //Выбираемся из цикла раньше времени, нет смысла проверять другие "корабли"
+                break;
+            }
+            if (result.equals("Sunk")) {
+                 //Ему пришел конец, так что удаляем его из списка "кораблей" и выходим из цикла
+                dotComToTest.remove(ditComToTest);
+                break;
+            }
+        }
+        System.out.println(result);
+    }
+    private void finishGame() {
+          //выводим сообщения о том, как пользователь прошел игру
+        System.out.println("All ships went down! Your shares are now worth nothing.");
+        if (numOfGuesses <= 18) {
+            System.out.println("It took you everything" + numOfGuesses + "attempts.");
+            System.out.println("You managed to get out before your investments sank.");
+        } else {
+            System.out.println("It took you quite some time..." + numOfGuesses + "attempts.");
+            System.out.println("Fish dance around your enclosure.");
+        }
+    }
+    public static void main(String[] args) {
+          //Создаём игровой объект
+        DotComBust game = new DotComBust()
     }
 }
