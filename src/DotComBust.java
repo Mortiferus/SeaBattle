@@ -76,6 +76,11 @@ public class DotComBust {
     }
     public static void main(String[] args) {
           //Создаём игровой объект
-        DotComBust game = new DotComBust()
+        DotComBust game = new DotComBust();
+          // Говорит объекту подготовить игру
+        game.setUpGame();
+          // Говорим игровому объекту начать главный игровой цикл (повторяем запрашивать пользовательский
+          //                                                          ввод и проверять полученные данные )
+        game.startPlaying();
     }
 }
