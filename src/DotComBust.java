@@ -9,11 +9,11 @@ public class DotComBust {
             // Создадим несколько "кораблей" и присвоим им адреса
                  // Создаём три объекта DotCom, даём им имена и помещаем в ArrayList
         DotCom one = new DotCom();
-        one.setName = ("Avrora");
+        one.setName ("Avrora");
         DotCom two = new DotCom();
-        two.setName = ("Titanik");
+        two.setName ("Titanik");
         DotCom three = new DotCom();
-        three.setName = ("Olimpic");
+        three.setName ("Olimpic");
         dotComsList.add(one);
         dotComsList.add(two);
         dotComsList.add(three);
@@ -37,7 +37,7 @@ public class DotComBust {
               //получаем пользовательский ввод
             String userGuess = helper.getUserInput("Make a move");
                //Вызываем наш метод CheckUserGuess
-            chechUserGuess(userGuess);
+            checkUserGuess(userGuess);
         }
           //Вызываем наш медо finishGame
         finishGame();
@@ -57,7 +57,7 @@ public class DotComBust {
             }
             if (result.equals("Sunk")) {
                  //Ему пришел конец, так что удаляем его из списка "кораблей" и выходим из цикла
-                dotComToTest.remove(ditComToTest);
+                dotComsList.remove(dotComToTest);
                 break;
             }
         }
